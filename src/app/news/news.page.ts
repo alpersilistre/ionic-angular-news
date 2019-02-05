@@ -7,13 +7,14 @@ import { NewsService } from '../news.service';
   styleUrls: ['./news.page.scss'],
 })
 export class NewsPage implements OnInit {
-
+  data: any;
   constructor(private newsService: NewsService) { }
 
   ngOnInit() {
     this.newsService.getData('top-headlines?country=tr')
       .subscribe(data => {
-        console.log(data);
+        // console.log(data);
+        this.data = data;
       });
   }
 
